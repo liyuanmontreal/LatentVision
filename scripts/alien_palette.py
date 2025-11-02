@@ -3,7 +3,7 @@ import argparse, os, json
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
 
-from expandcolor.alien_color import pipeline
+from latentvision.alien_color import pipeline
 
 def main():
     p = argparse.ArgumentParser(description="ExpandColor — ViT Gamut Expansion")

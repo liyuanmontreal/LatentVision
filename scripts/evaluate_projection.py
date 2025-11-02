@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import os, json, argparse, numpy as np
 from PIL import Image
-from expandcolor.alien_color import encode_image_to_latents, project_to_display
-from expandcolor.metrics import evaluate_all
+from latentvision.alien_color import encode_image_to_latents, project_to_display
+from latentvision.metrics import evaluate_all
 
 def main():
     ap = argparse.ArgumentParser(description="Evaluate projection quality for ExpandColor")

@@ -1,0 +1,8 @@
+torch
+timm
+numpy
+matplotlib
+plotly
+umap-learn
+scikit-learn
+streamlit

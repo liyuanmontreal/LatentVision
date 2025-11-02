@@ -1,3 +1,21 @@
+Metadata-Version: 2.4
+Name: latentvision
+Version: 0.1.0
+Summary: Tools for visualizing and interpreting visual embeddings
+Author: Yuan Li
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch
+Requires-Dist: timm
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: plotly
+Requires-Dist: umap-learn
+Requires-Dist: scikit-learn
+Requires-Dist: streamlit
+Dynamic: license-file
+
 # ExpandColor — Vision Transformer Gamut Expansion (非人类色彩空间)
 
 > RGB → ViT latent (N-d) → 聚类/投影 → 人眼可视化（“翻译后的外星色”）

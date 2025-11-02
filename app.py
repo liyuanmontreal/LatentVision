@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 import os, json
+import sys,os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import streamlit as st
 from PIL import Image
-from expandcolor.alien_color import pipeline
+from latentvision.alien_color import pipeline
 
-st.set_page_config(page_title="ExpandColor", layout="wide")
-st.title("Expand Color Gamut with Vision Transformer (使用视觉变换器扩展色域)")
+st.set_page_config(page_title="LatentVision", layout="wide")
+st.title("Latent Vision Explorer 探索高维视觉表征空间（Vision Embedding Manifold）")
 st.caption("RGB → ViT latent → cluster → project → translate to human display")
 
-uploaded = st.file_uploader("Upload an image (上传图片)", type=["jpg","jpeg","png","webp"])
+uploaded = st.file_uploader("Upload an image (导入图像)", type=["jpg","jpeg","png","webp"])
 col1, col2 = st.columns([1,1])
 
 with st.sidebar:
@@ -33,4 +36,4 @@ if uploaded is not None:
         with open(res["json"], "r", encoding="utf-8") as f:
             st.json(json.load(f))
 else:
-    st.info("Upload an image to start.（上传图片以开始）")
+    st.info("Upload an image to start.（导入图像以开始）")

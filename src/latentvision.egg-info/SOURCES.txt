@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/latentvision/__init__.py
+src/latentvision/alien_color.py
+src/latentvision/metrics.py
+src/latentvision/model.py
+src/latentvision.egg-info/PKG-INFO
+src/latentvision.egg-info/SOURCES.txt
+src/latentvision.egg-info/dependency_links.txt
+src/latentvision.egg-info/requires.txt
+src/latentvision.egg-info/top_level.txt
