@@ -23,7 +23,7 @@ def main():
 
     if args.image is not None:
         img = Image.open(args.image).convert("RGB")
-        img = img.resize((224, 224))  # ✅ 强制适配 ViT 输入尺寸
+        img = img.resize((224, 224))  # adapt to Vit size
         latents, _ = encode_image_to_latents(img, model_name=args.model_name, pretrained=True,
                                              latent_dim=args.latent_dim, device=args.device)
         X_high = latents

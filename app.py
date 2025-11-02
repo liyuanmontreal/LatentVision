@@ -8,14 +8,14 @@ from PIL import Image
 from latentvision.alien_color import pipeline
 
 st.set_page_config(page_title="LatentVision", layout="wide")
-st.title("Latent Vision Explorer 探索高维视觉表征空间（Vision Embedding Manifold）")
+st.title("Latent Vision Explorer （Vision Embedding Manifold）")
 st.caption("RGB → ViT latent → cluster → project → translate to human display")
 
-uploaded = st.file_uploader("Upload an image (导入图像)", type=["jpg","jpeg","png","webp"])
+uploaded = st.file_uploader("Upload an image", type=["jpg","jpeg","png","webp"])
 col1, col2 = st.columns([1,1])
 
 with st.sidebar:
-    st.markdown("### Settings (设置)")
+    st.markdown("### Settings")
     clusters = st.slider("Clusters", 4, 32, 16, 1)
     latent_dim = st.select_slider("Latent dim", options=[192,384,768,1024], value=384)
     model_name = st.text_input("ViT model name", "vit_base_patch16_224")
@@ -36,4 +36,4 @@ if uploaded is not None:
         with open(res["json"], "r", encoding="utf-8") as f:
             st.json(json.load(f))
 else:
-    st.info("Upload an image to start.（导入图像以开始）")
+    st.info("Upload an image to start.")

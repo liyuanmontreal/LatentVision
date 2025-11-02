@@ -7,7 +7,7 @@ from mpl_toolkits.mplot3d import Axes3D  # noqa
 from sklearn.decomposition import PCA
 
 ###############################################################
-# 1) 3D AI 色谱点云
+# 1) 3D Embedding Cloud
 ###############################################################
 def plot_3d_color_space(X_low):
     fig = plt.figure(figsize=(6,6))
@@ -28,7 +28,7 @@ def plot_3d_color_space(X_low):
 
 
 ###############################################################
-# 2) 2D AI 色觉曼陀罗
+# 2) 2D Projection
 ###############################################################
 def plot_2d_color_map(X_low):
     p = PCA(n_components=2)
@@ -43,7 +43,7 @@ def plot_2d_color_map(X_low):
 
 
 ###############################################################
-# 3) RGB vs AI 色域对比
+# 3) RGB vs AI Embedding Distribution
 ###############################################################
 def plot_rgb_cube_and_ai(X_low):
     r = np.linspace(0, 1, 8)
@@ -57,7 +57,7 @@ def plot_rgb_cube_and_ai(X_low):
     ax1.scatter(rgb_cube[:,0], rgb_cube[:,1], rgb_cube[:,2], c=rgb_cube, s=15)
     ax1.set_title("Human RGB Cube")
 
-    # AI 色域立方体
+    # AI Embedding Distribution
     ax2 = fig.add_subplot(122, projection='3d')
     ax2.scatter(X_low[:,0], X_low[:,1], X_low[:,2], c=X_low, s=15)
     ax2.set_title("Embedding Distribution")   
@@ -137,7 +137,7 @@ def plot_clustered_color_space(X_low, n_clusters=6):
     ax = fig.add_subplot(111, projection='3d')
     ax.scatter(
         X_low[:,0], X_low[:,1], X_low[:,2],
-        c=labels, cmap='tab10', s=40, alpha=0.45  # ✅ 透明点云
+        c=labels, cmap='tab10', s=40, alpha=0.45  # 透明点云
     )
     ax.set_title(f" K-Means Clusters ({n_clusters} groups)")
     return fig
